@@ -8,6 +8,8 @@ $ pip install -r requirements.txt
 
 #### Usage
 
+Note: Your REST API endpoint might not have support for all prediction types
+
 Invoice prediction:
 
 ```bash
