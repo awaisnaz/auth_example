@@ -17,7 +17,7 @@ You will need to acquire below values by contacting Lucidtech
 * API key (<api_key>)
 * AWS Access Key Id (<access_key_id>)
 * AWS Secret Access Key (<secret_access_key>)
-* API Endpoint Prefix (<endpoint_prefix)
+* API Endpoint Prefix (<endpoint_prefix>)
 
 Note: Your REST API endpoint might not have support for all prediction types
 
