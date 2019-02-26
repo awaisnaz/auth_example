@@ -79,6 +79,12 @@ def invoice_prediction():
     print(json.dumps(predictions, indent=2))
 
 
+def receipt_prediction():
+    document_id = upload_document()
+    predictions = post_predictions(document_id, 'receipt')
+    print(json.dumps(predictions, indent=2))
+
+
 def document_split():
     document_id = upload_document()
     predictions = post_predictions(document_id, 'documentSplit')
@@ -100,6 +106,14 @@ if __name__ == '__main__':
     invoice_prediction_parser.add_argument('--consent_id', default='1234',
                                            help='Consent ID is typically a mapping from end user to a unique identifier')
     invoice_prediction_parser.set_defaults(cmd=invoice_prediction)
+
+    receipt_prediction_parser = subparsers.add_parser('receipt_prediction')
+    receipt_prediction_parser.add_argument('document_path', help='Path to document to make predictions on')
+    receipt_prediction_parser.add_argument('content_type', choices={'image/jpeg', 'application/pdf'},
+                                           help='Content-Type of document to make predictions on')
+    receipt_prediction_parser.add_argument('--consent_id', default='1234',
+                                           help='Consent ID is typically a mapping from end user to a unique identifier')
+    receipt_prediction_parser.set_defaults(cmd=receipt_prediction)
 
     document_split_parser = subparsers.add_parser('document_split')
     document_split_parser.add_argument('document_path', help='Path to document to split')

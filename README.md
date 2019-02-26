@@ -17,6 +17,13 @@ $ python src/main.py https://xxx.api.lucidtech.ai/v1 <api_key> <access_key_id> <
 $ python src/main.py https://xxx.api.lucidtech.ai/v1 <api_key> <access_key_id> <secret_access_key> invoice_prediction invoice.jpeg image/jpeg
 ```
 
+Receipt prediction:
+
+```bash
+$ python src/main.py https://xxx.api.lucidtech.ai/v1 <api_key> <access_key_id> <secret_access_key> receipt_prediction receipt.pdf application/pdf
+$ python src/main.py https://xxx.api.lucidtech.ai/v1 <api_key> <access_key_id> <secret_access_key> receipt_prediction receipt.jpeg image/jpeg
+```
+
 Document split:
 
 ```bash
