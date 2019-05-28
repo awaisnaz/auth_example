@@ -43,7 +43,7 @@ $ python src/main.py https://<endpoint_prefix>.api.lucidtech.ai/v1 <api_key> <ac
 
 ##### Custom S3 KMS key
 
-For APIs that encrypts S3 data with a custom KMS key instead of the default S3 key you need to provide the following flag to the program.
+For APIs that encrypt S3 data with a custom KMS key instead of the default S3 key you need to provide the following flag to the program.
 
 ```
 --with_s3_kms
