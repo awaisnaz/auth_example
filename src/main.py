@@ -47,6 +47,10 @@ def post_documents():
 def put_document(presigned_url):
     body = pathlib.Path(args.document_path).read_bytes()
     headers = {'Content-Type': args.content_type}
+
+    if args.with_s3_kms:
+        headers['x-amz-server-side-encryption'] = 'aws:kms'
+
     put_document_response = requests.put(presigned_url, data=body, headers=headers)
     put_document_response.raise_for_status()
     return put_document_response.content.decode()
@@ -97,6 +101,7 @@ if __name__ == '__main__':
     parser.add_argument('api_key')
     parser.add_argument('access_key_id')
     parser.add_argument('secret_access_key')
+    parser.add_argument('--with_s3_kms', action='store_true')
     subparsers = parser.add_subparsers()
 
     invoice_prediction_parser = subparsers.add_parser('invoice_prediction')
