@@ -10,6 +10,7 @@ from auth import AWSSignatureV4
 def create_auth():
     return AWSSignatureV4(
         region='eu-west-1',
+        line_to_delete = undefined,
         service='execute-api',
         aws_access_key=args.access_key_id,
         aws_secret_key=args.secret_access_key,
